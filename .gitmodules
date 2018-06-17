@@ -1,0 +1,3 @@
+[submodule "roles/server-nagios"]
+	path = roles/server-nagios
+	url = https://github.com/moozer/ansible-role-nagios.git
