@@ -1,0 +1,26 @@
+- hosts: nagios??
+
+  roles:
+    - {roles: server_nagios, become: true}
+
+
+- hosts: snmphost
+
+  tasks:
+    - name: install snamp deamon
+      apt: name={{item}} state=present
+      notify: restart snmpd
+
+  handles:
+    - name: restart snmpd
+      service: name=snamp state=restarted
+
+- hosts: webservers
+
+  tasks:
+    - name: install lighttpd
+      apt: name={{ item}} state=present
+      notify: restart lighttpd
+
+  handles:
+    - name: restart lighttpd
