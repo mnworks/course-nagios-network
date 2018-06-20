@@ -3,3 +3,4 @@ nagios_group_contacts:
 
 nagios_group_tests:
   ping: "check_ping!100.0,20%!500.0,60%"
+  memory: "check_snmp!-C public -o .1.3.6.1.4.1.2021.4.11.0 -w 500000: -c 200000:"
