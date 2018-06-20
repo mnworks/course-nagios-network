@@ -1,0 +1,11 @@
+nagios_contacts:
+  - name: admin_infra
+    mail: admin_infra@somewhere
+    notify:
+    - email
+  - name: admin_servers
+    mail: admin_servers@somewhere
+    notify:
+    - email
+
+nagios_admin_group_contact: admin_infra
