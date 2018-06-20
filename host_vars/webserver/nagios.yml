@@ -1,0 +1,2 @@
+nagios_host_checks:
+   http: "check_http"
