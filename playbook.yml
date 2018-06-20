@@ -16,9 +16,16 @@
         - snmpd
       notify: restart snmpd
 
+    - name: create snmpd config file
+      template:
+        src: etc_snmp_snmpd.conf.j2
+        dest: /etc/snmp/snmpd.conf
+        mode: 0600
+      notify: restart snmpd
+
   handlers:
     - name: restart snmpd
-      service: name=snmp state=restarted
+      service: name=snmpd state=restarted
 
 - hosts: webserver
   become: true
